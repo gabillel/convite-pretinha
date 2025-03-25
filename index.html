@@ -10,12 +10,15 @@
             text-align: center;
             background-color: #ffebf0;
             padding: 50px;
+            position: relative;
+            height: 100vh;
         }
         h1 {
             color: #d63384;
         }
         .buttons {
             margin-top: 20px;
+            position: relative;
         }
         button {
             font-size: 20px;
@@ -34,6 +37,11 @@
             color: white;
             position: absolute;
         }
+        #mensagem {
+            font-size: 20px;
+            color: #d63384;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -42,25 +50,24 @@
         <button id="yes" onclick="aceitou()">Sim</button>
         <button id="no" onmouseover="fugir()">Não</button>
     </div>
-    
+
+    <div id="mensagem"></div>
+
     <script>
-       function aceitou() {
-    // Exibe a mensagem na página
-    document.getElementById("mensagem").innerHTML = "Sabia que você ia aceitar, minha preta! <3";
-    
-    // Espera 3 segundos e depois redireciona para o YouTube
-    setTimeout(function() {
-        window.location.href = "https://www.youtube.com/watch?v=_dnB4nWckxg";
-    }, 3000);
-}
-
-
+        function aceitou() {
+            // Exibe a mensagem na página
+            document.getElementById("mensagem").innerHTML = "Sabia que você ia aceitar, minha preta! <3";
+            
+            // Espera 3 segundos e depois redireciona para o YouTube
+            setTimeout(function() {
+                window.location.href = "https://www.youtube.com/watch?v=_dnB4nWckxg";
+            }, 3000);
         }
-        
+
         function fugir() {
             let btn = document.getElementById("no");
-            let x = Math.random() * (window.innerWidth - 100);
-            let y = Math.random() * (window.innerHeight - 50);
+            let x = Math.random() * (window.innerWidth - 100); // Garante que o botão não saia da tela
+            let y = Math.random() * (window.innerHeight - 50); // Garante que o botão não saia da tela
             btn.style.left = `${x}px`;
             btn.style.top = `${y}px`;
         }
