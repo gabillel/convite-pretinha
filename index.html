@@ -49,7 +49,7 @@
     <h1>Minha Pretinha, quer sair comigo?</h1>
     <div class="buttons">
         <button id="yes" onclick="aceitou()">Sim</button>
-        <button id="no" onmouseover="fugir()" style="top: 100px; left: 50px;">Não</button>
+        <button id="no" onmouseover="fugir()">Não</button>
     </div>
 
     <div id="mensagem"></div>
@@ -67,9 +67,8 @@
 
         function fugir() {
             let btn = document.getElementById("no");
-            // Garante que o botão "não" se mova dentro da tela
-            let x = Math.random() * (window.innerWidth - 100); // Máximo de 100px para que o botão não ultrapasse a tela
-            let y = Math.random() * (window.innerHeight - 50); // Máximo de 50px para que o botão não ultrapasse a tela
+            let x = Math.random() * (window.innerWidth - btn.offsetWidth); // Máximo de 100px para garantir que o botão não ultrapasse a tela
+            let y = Math.random() * (window.innerHeight - btn.offsetHeight); // Máximo de 50px para garantir que o botão não ultrapasse a tela
 
             // Atribui as novas posições ao botão "não"
             btn.style.left = `${x}px`;
