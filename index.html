@@ -44,10 +44,16 @@
     </div>
     
     <script>
-        function aceitou() {
-    alert("Sabia que você ia aceitar, minha preta! <3");
-    window.location.href = "https://www.youtube.com/watch?v=_dnB4nWckxg";
+       function aceitou() {
+    // Exibe a mensagem na página
+    document.getElementById("mensagem").innerHTML = "Sabia que você ia aceitar, minha preta! <3";
+    
+    // Espera 3 segundos e depois redireciona para o YouTube
+    setTimeout(function() {
+        window.location.href = "https://www.youtube.com/watch?v=_dnB4nWckxg";
+    }, 3000);
 }
+
 
         }
         
