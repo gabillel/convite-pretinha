@@ -37,6 +37,9 @@
             background-color: #dc3545;
             color: white;
             position: absolute;
+            display: inline-block; /* Sempre visível ao lado do "Sim" */
+            left: 210px; /* Ajustado para ficar ao lado do botão "Sim" */
+            top: 50px; /* Fica na mesma altura do "Sim" */
         }
         #mensagem {
             font-size: 20px;
@@ -67,8 +70,8 @@
 
         function fugir() {
             let btn = document.getElementById("no");
-            let x = Math.random() * (window.innerWidth - btn.offsetWidth); // Máximo de 100px para garantir que o botão não ultrapasse a tela
-            let y = Math.random() * (window.innerHeight - btn.offsetHeight); // Máximo de 50px para garantir que o botão não ultrapasse a tela
+            let x = Math.random() * (window.innerWidth - btn.offsetWidth); // Garante que o botão não ultrapasse a largura da tela
+            let y = Math.random() * (window.innerHeight - btn.offsetHeight); // Garante que o botão não ultrapasse a altura da tela
 
             // Atribui as novas posições ao botão "não"
             btn.style.left = `${x}px`;
